@@ -147,7 +147,7 @@ export class Envs {
    * @returns {Array} 源排序数组
    */
   static resolveSourceOrder() {
-    let sourceOrder = this.get('SOURCE_ORDER', '360,vod,renren,hanjutv', 'string');
+    let sourceOrder = this.get('SOURCE_ORDER', '360,vod,hanjutv,renren', 'string');
 
     const orderArr = sourceOrder
       .split(',')
@@ -156,7 +156,7 @@ export class Envs {
 
     this.accessedEnvVars.set('SOURCE_ORDER', orderArr);
 
-    return orderArr.length > 0 ? orderArr : ['360', 'vod', 'renren', 'hanjutv'];
+    return orderArr.length > 0 ? orderArr : ['360', 'vod', 'hanjutv', 'renren'];
   }
 
   /**
